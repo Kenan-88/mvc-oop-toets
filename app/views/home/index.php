@@ -8,7 +8,7 @@
 </head>
 <body>
     <h3><?= $data['title']; ?></h3>
-    <a href="<?= URLROOT; ?>/voetballers/index">voteballers</a>
+    <a href="<?= URLROOT; ?>/reuzenrad/index">reuzenrad</a>
 
     <table border="1">
         <thead>

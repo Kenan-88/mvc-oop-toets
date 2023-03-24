@@ -3,26 +3,26 @@
 class Reuzenrad extends BaseController
 {
 
-    private $reuzenradModel;
+    private $ReuzenradModel;
     public function __construct()
     {
-        $this->reuzenradModel = $this->model('voetballersModel');
+        $this->ReuzenradModel = $this->model('ReuzenradModel');
     }
 
     public function index()
     {
 
-        $result = $this->reuzenradModel->getvoetballers();
+        $result = $this->ReuzenradModel->getReuzenrad();
         $rows = "";
-        foreach ($result as $reuzenrad) {
+        // var_dump($result);
+        foreach ($result as $result) {
             $rows .= "<tr>
-            <td>$reuzenrad->Id</td>
-            <td>$reuzenrad->Naam</td>
-            <td>$reuzenrad->Hoogte</td>
-            <td>$reuzenrad->Leeftijd</td>
-            <td>$reuzenrad->Nationaliteit</td>
-            <td>$reuzenrad->Salaris</td>
-          </tr>";
+                        <td>$result->Naam</td>
+                        <td>$result->Hoogte</td>
+                        <td>$result->Land</td>
+                        <td>$result->Kosten</td>
+                        <td>$result->AantalPassagiers</td>
+                      </tr>";
         }
         // var_dump($result);
         $data = [
@@ -30,6 +30,6 @@ class Reuzenrad extends BaseController
             'rows' => $rows
         ];
 
-        $this->view('voetballers/index', $data);
+        $this->view('reuzenrad/index', $data);
     }
 }
